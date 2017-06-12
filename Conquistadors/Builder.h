@@ -1,5 +1,7 @@
 #pragma once
 #include "Human.h"
+#include <vector>
+using namespace std;
 class Builder : public Human
 {
 	int tired;
@@ -7,6 +9,8 @@ class Builder : public Human
 public:
 	Builder(int health = 100, int hunger = 100, int tired = 10);
 	~Builder();
+
+	 vector<Builder*>builders;
 
 	int getTired() { return tired; }
 
