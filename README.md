@@ -6,4 +6,5 @@ klasy: człowiek i jego pochodne: żołnierz, zbieracz jedzenia i skarbów, budo
 
 Harmonogram:
 Tydzień pierwszy: Rozpoczęcie projektu, utworzenie większości klas ludzi.
-Tydzień drugi: Rozbudowa klas, rozpoczęcie pracy nad klasą events.
+Tydzień drugi: Rozbudowa klasy collectors
+Tydzień trzeci: Rozbudowa kolejnych klas
