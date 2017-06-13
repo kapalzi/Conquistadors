@@ -1,11 +1,10 @@
 #include "stdafx.h"
 #include "Collector.h"
-
+#include <iostream>
 
 Collector::Collector(int health, int hunger, int backpackCapacity)
 	:Human(health, hunger), backpackCapacity(backpackCapacity)
 {
-	collectors.insert(collectors.begin(), 20, new Collector());
 }
 
 
@@ -26,53 +25,53 @@ void Collector::treasureFound()
 	this->setFoundTreasure(this->getFoundTreasure() + 2);
 	this->setBackpackCapacity(getBackpackCapacity() - 2);
 }
-
+/*
 void Collector::collectorsGoOut()
 {
-	srand(time(NULL));
-		if (collectors.empty()) return;
-
-		int l = (rand() % (3 - 1 + 1) + 1);
-		for (int i = 0; i < collectors.size(); i++)
+		if (collectorsTeam.empty()) return;
+		int l = random(1, 3);
+		for (int i = 0; i < collectorsTeam.size(); i++)
 		{
-			collectors[i]->clearBackpack();
+			collectorsTeam[i]->clearBackpack();
 			for (int j = 0; j < l; j++)
 			{
-				int r = (rand() % (100 - 1 + 1) + 1);
-				if (r % 2 == 0)
+				int r = random(1, 100);
+				 if (r % 11 == 0)
 				{
-					collectors[i]->foodFound();
+					 collectorsTeam[i]->treasureFound();
 				}
-				else if (r % 11 == 0)
+				
+				 if (r % 2 == 0)
 				{
-					collectors[i]->treasureFound();
+					 collectorsTeam[i]->foodFound();
 				}
+				
 			}
 		}
 }
 
 int Collector::collectorsComeBackWithFood()
 {
-	if (collectors.empty()) return 0;
+	if (collectorsTeam.empty()) return 0;
 
 	int foodTransport = 0;
 
-	for (int i = 0; i < collectors.size(); i++)
+	for (int i = 0; i < collectorsTeam.size(); i++)
 	{
-		foodTransport += collectors[i]->getFoundFood();
+		foodTransport += collectorsTeam[i]->getFoundFood();
 	}
 	return foodTransport;
 }
 
 int Collector::collectorsComeBackWithTreasure()
 {
-	if (collectors.empty()) return 0;
+	if (collectorsTeam.empty()) return 0;
 
 	int treasureTransport = 0;
 
-	for (int i = 0; i < collectors.size(); i++)
+	for (int i = 0; i < collectorsTeam.size(); i++)
 	{
-		treasureTransport += collectors[i]->getFoundTreasure();
+		treasureTransport += collectorsTeam[i]->getFoundTreasure();
 	}
 	return treasureTransport;
 }
@@ -80,15 +79,43 @@ int Collector::collectorsComeBackWithTreasure()
 void Collector::collectorsWereAttacked()
 {
 	int	r = random(1, 10);
-	if (r == 7) //zaatakowani czy nie
+	if (0)//(r%7==0) //zaatakowani czy nie
 	{
-		int r = random(1, 5);
+		int r = random(1, 3);
 
-		for (int i = collectors.size(); i >= r; i--)
-		{
-			delete collectors[i];
-			collectors.erase(collectors.end() - 1);
-		}
+		if (r > collectorsTeam.size())
+		r = collectorsTeam.size();
+		collectorsTeam.erase(collectorsTeam.begin(), collectorsTeam.begin() + r);
 	}
 	else return;
 }
+
+void Collector::dailyHunger()
+{
+	//for each (Collector* i in collectors)
+	for (int i = 0; i < collectorsTeam.size(); i++)
+	{
+		this->collectorsTeam[i]->setHunger(20);
+	}
+}
+
+void Collector::collectorsDie(int d)
+{
+	collectorsTeam.erase(collectorsTeam.begin(), collectorsTeam.begin()+d);
+}
+
+void Collector::isCollectorDead()
+{
+	int deaths = 0;
+	//for each (Collector* i in collectors)
+	for (int i = 0; i < collectorsTeam.size(); i++)
+	{
+		
+		if (this->collectorsTeam[i]->getHunger() <= 0)
+		{
+			deaths++;
+		}
+	}
+	collectorsDie(deaths);
+}
+*/

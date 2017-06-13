@@ -15,14 +15,13 @@ public:
 	bool isAlive = 1;
 	int getStoredFood() { return storedFood; }
 	int getStoredTreasure() { return storedTreasure; }
+	int getSimulationTime() { return simulationTime; }
 	
 	void setStoredFood(int a) { this->storedFood += a; }
 	void setStoredTreasure(int a) { this->storedTreasure += a; }
 
-//	void collectorsGoOut();
-
-	//vector<Collector*> getCollectors() { return collectors; }
-
-
+	int howManyNewCollectorsCome(int c);
+	int howManyNewSoldiersCome(int s);
+	int howManyNewBuildersCome(int b);
 };
 

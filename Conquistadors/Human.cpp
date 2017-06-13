@@ -14,7 +14,6 @@ Human::~Human()
 
 int Human::random(int a, int b)
 {
-	srand(time(NULL));
 	int r = (rand() % (b - a + 1) + a);
 	return r;
 }
