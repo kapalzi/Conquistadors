@@ -4,17 +4,13 @@
 using namespace std;
 class Soldier : public Human
 {
-	int attack;
-	int defence;
+	int combatPoints;
 public:
-	Soldier(int health = 100, int hunger = 100, int attack = 10, int defense = 3 );
+	Soldier(int health = 100, int hunger = 100, int combatPoints = 10);
 	~Soldier();
-	int getAttack() { return attack; }
-	int getDefence() { return defence; }
+	int getcombatPoints() { return combatPoints; }
 
-	void setAttack(int attack) { this->attack = attack; }
-	// s.setAttack(s.getAttack() + a)
-	void setDefence(int defence) { this->attack = defence; }
-	
+	void setCombatPoints(int combatPoints) { this->combatPoints += combatPoints; }
+	int combatPointsMeaning(int combatPoints);
 };
 

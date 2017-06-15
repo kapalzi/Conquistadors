@@ -11,6 +11,7 @@ public:
 	
 	int dailyHunger();
 	void isBuilderDead();
+	int rebuildSettlement(int condition);
 	void builderDie(int d);
 	int dailyEating(int needed, int stored);
 };

@@ -1,18 +1,23 @@
 #pragma once
-#include <cstdlib>
-#include <ctime>
+#include "stdafx.h"
 #include "Settlement.h"
+#include <vector>
+#include <iostream>
+#include <ctime>
+#include "collectorsTeam.h"
+#include "BuildersTeam.h"
+#include "SoldiersTeam.h"
+using namespace std;
 
 class Events
 {
-	int dayCounter;
 public:
-	Events(int dayCounter = 1);
+	Events();
 	~Events();
-	void newDayStarts();
-	void newDayEnds();
-	 //random number a-b
-	//virtual void collectorsGoOut() = 0;
+	void addCollectors(int l);
+	void addBuilders(int l);
+	void addSoldiers(int l);
+	void startSimulation();
 };
 
 

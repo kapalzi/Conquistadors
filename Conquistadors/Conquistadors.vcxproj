@@ -141,7 +141,6 @@
     <ClInclude Include="Builder.h" />
     <ClInclude Include="BuildersTeam.h" />
     <ClInclude Include="Collector.h" />
-    <ClInclude Include="CollectorEvents.h" />
     <ClInclude Include="collectorsTeam.h" />
     <ClInclude Include="Events.h" />
     <ClInclude Include="Human.h" />
@@ -155,7 +154,6 @@
     <ClCompile Include="Builder.cpp" />
     <ClCompile Include="BuildersTeam.cpp" />
     <ClCompile Include="Collector.cpp" />
-    <ClCompile Include="CollectorEvents.cpp" />
     <ClCompile Include="collectorsTeam.cpp" />
     <ClCompile Include="Conquistadors.cpp" />
     <ClCompile Include="Events.cpp" />

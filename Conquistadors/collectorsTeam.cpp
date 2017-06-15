@@ -20,7 +20,6 @@ void collectorsTeam::collectorsGoOut()
 {
 	if (collectorsPack.empty()) return;
 	int l = random(1, 3);
-	//for (int i = 0; i < collectorsPack.size(); i++)
 	for each (Collector* i in collectorsPack)
 	{
 		i->clearBackpack();
@@ -31,7 +30,6 @@ void collectorsTeam::collectorsGoOut()
 			{
 				i->treasureFound();
 			}
-
 			if (r % 3 == 0)
 			{
 				i->foodFound();
@@ -76,7 +74,7 @@ void collectorsTeam::collectorsWereAttacked()
 		if (r > collectorsPack.size())
 			r = collectorsPack.size();
 		collectorsPack.erase(collectorsPack.begin(), collectorsPack.begin() + r);
-		cout << endl<< "Idians attacked! " << r << "collectors died ;C" << endl;
+		cout << endl<< "Collectors were attacked! " << r << " collectors died ;C" << endl;
 	}
 	else return;
 }
@@ -86,8 +84,8 @@ int collectorsTeam::dailyHunger()
 	int neededFood=0;
 	for each (Collector* i in collectorsPack)
 	{
-		i->setHunger(-20);
-		neededFood += 20;
+		i->setHunger(-30);
+		neededFood += 30;
 	}
 	return neededFood;
 }
@@ -98,18 +96,27 @@ int collectorsTeam::dailyEating(int needed,int stored)
 	{
 		for each (Collector* i in collectorsPack)
 		{
-			i->setHunger(20);
+			i->setHunger(30);
 		}
 		return needed;
 	}
 	else
 	{
+		/*
+		//WSZYSCY UMIERALI W TYM SAMYM MOMENCIE
 		int ration = stored / collectorsPack.size();
 		for each (Collector* i in collectorsPack)
 		{
 			i->setHunger(ration);
 		}
 		return ration * collectorsPack.size();
+	*/
+		for each (Collector* i in collectorsPack)
+		{
+			if(stored>=30)
+			i->setHunger(30);
+			stored -= 30;
+		}
 	}
 }
 
@@ -122,7 +129,6 @@ void collectorsTeam::isCollectorDead()
 {
 	int deaths = 0;
 	for each (Collector* i in collectorsPack)
-	//for (int i = 0; i < collectorsPack.size(); i++)
 	{
 
 		if (i->getHunger() <= 0)

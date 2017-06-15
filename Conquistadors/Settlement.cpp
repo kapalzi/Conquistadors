@@ -9,42 +9,40 @@ Settlement::Settlement(int condition, int storedFood, int storedTreasure, int si
 
 int Settlement::howManyNewCollectorsCome(int c)
 {
-		while (storedTreasure > 10)
-		{
-			if (c == 5) return c;
+			if (c == 20) return c;
 			if (storedTreasure > 10)
 			{
 				c++;
 				storedTreasure -= 10;
 			}
-		}
 		return c;
 }
 int Settlement::howManyNewSoldiersCome(int s)
 {
-		while (storedTreasure > 10)
-		{
-			if (s == 5) return s;
+			if (s == 20) return s;
 			if (storedTreasure > 10)
 			{
 				s++;
 				storedTreasure -= 10;
 			}
-		}
 		return s;
 }
 int Settlement::howManyNewBuildersCome(int b)
 {
-
-		while (storedTreasure > 10)
-		{
-			if (b == 5) return b;
+			if (b == 20) return b;
 			if (storedTreasure > 10)
 			{
 				b++;
 				storedTreasure -= 10;
 			}
-		}
 		return b;
+}
+
+void Settlement::checkCondition(int condition)
+{
+	if (condition <= 0)
+	{
+		isAlive = 0;
+	}
 }
 

@@ -42,9 +42,6 @@
     <ClInclude Include="Builder.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="CollectorEvents.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
     <ClInclude Include="collectorsTeam.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
@@ -78,9 +75,6 @@
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
     <ClCompile Include="Builder.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="CollectorEvents.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
     <ClCompile Include="collectorsTeam.cpp">

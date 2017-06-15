@@ -2,12 +2,22 @@
 #include "Soldier.h"
 
 
-Soldier::Soldier(int health, int hunger, int attack, int defence)
-	:Human(health, hunger), attack(attack), defence(defence)
+Soldier::Soldier(int health, int hunger, int combatPoints)
+	:Human(health, hunger), combatPoints(combatPoints)
 {
 }
 
-
 Soldier::~Soldier()
 {
+}
+
+int::Soldier::combatPointsMeaning(int combatPoints)
+{
+	int kills = 1;
+	int i = 0;
+	while (combatPoints<i)
+	{
+		i += 10;
+	}
+	return kills + i / 10;
 }

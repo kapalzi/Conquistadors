@@ -15,8 +15,8 @@ int BuildersTeam::dailyHunger()
 	int neededFood = 0;
 	for each (Builder* i in buildersPack)
 	{
-		i->setHunger(-20);
-		neededFood += 20;
+		i->setHunger(-30);
+		neededFood += 30;
 	}
 	return neededFood;
 }
@@ -27,18 +27,18 @@ int BuildersTeam::dailyEating(int needed, int stored)
 	{
 		for each (Builder* i in buildersPack)
 		{
-			i->setHunger(20);
+			i->setHunger(30);
 		}
 		return needed;
 	}
 	else
 	{
-		int ration = stored / buildersPack.size();
-		for each (Builder* i in buildersPack)
+		for each (Builder *i in buildersPack)
 		{
-			i->setHunger(ration);
+			if (stored >= 30)
+				i->setHunger(30);
+			stored -= 30;
 		}
-		return ration * buildersPack.size();
 	}
 }
 
@@ -60,4 +60,22 @@ void BuildersTeam::isBuilderDead()
 		}
 	}
 	builderDie(deaths);
+}
+
+int BuildersTeam::rebuildSettlement(int condition)
+{
+	if (condition==1000) return 0;
+	if (buildersPack.empty()) return 0;
+	int neededRepairs = 1000 - condition;
+	int doneRepairs = neededRepairs;
+	for each (Builder *i in buildersPack)
+	{
+		if (i->getTired() < 6 && doneRepairs>0)
+		{
+			doneRepairs -= 20;
+			i->setTired(3);
+		}
+	}
+	if (doneRepairs == 0) return neededRepairs;
+	else return neededRepairs - doneRepairs;
 }
