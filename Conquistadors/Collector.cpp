@@ -3,12 +3,7 @@
 #include <iostream>
 
 Collector::Collector(int health, int hunger, int backpackCapacity)
-	:Human(health, hunger), backpackCapacity(backpackCapacity)
-{
-}
-
-
-Collector::~Collector()
+	:Human(hunger), backpackCapacity(backpackCapacity)
 {
 }
 

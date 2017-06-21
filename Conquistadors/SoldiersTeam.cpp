@@ -6,13 +6,6 @@ SoldiersTeam::SoldiersTeam()
 {
 }
 
-
-SoldiersTeam::~SoldiersTeam()
-{
-}
-
-
-
 int::SoldiersTeam::battleResult(int howMany)
 {
 	for each (Soldier* i in soldiersPack)

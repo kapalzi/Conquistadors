@@ -8,7 +8,6 @@ public:
 	vector<Soldier*>soldiersPack;
 
 	SoldiersTeam();
-	~SoldiersTeam();
 
 	int indiansAttack(int days);
 	int battleResult(int x);

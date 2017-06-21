@@ -3,11 +3,7 @@
 
 
 Soldier::Soldier(int health, int hunger, int combatPoints)
-	:Human(health, hunger), combatPoints(combatPoints)
-{
-}
-
-Soldier::~Soldier()
+	:Human( hunger), combatPoints(combatPoints)
 {
 }
 

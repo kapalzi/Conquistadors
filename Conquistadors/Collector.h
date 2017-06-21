@@ -11,7 +11,6 @@ class Collector : public Human
 	int foundTreasure = 0;
 public:
 	Collector(int health = 100, int hunger = 100, int backpackCapacity = 25);
-	~Collector();
 
 	int getBackpackCapacity() { return backpackCapacity; }
 	int getFoundFood() { return foundFood; }

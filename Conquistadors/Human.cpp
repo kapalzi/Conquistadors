@@ -1,15 +1,8 @@
 #include "stdafx.h"
 #include "Human.h"
 
-Human::Human(int health, int hunger):health(health), hunger(hunger)
+Human::Human(int hunger): hunger(hunger)
 {
-	//counter++;
-}
-
-
-Human::~Human()
-{
-	//counter--;
 }
 
 int Human::random(int a, int b)

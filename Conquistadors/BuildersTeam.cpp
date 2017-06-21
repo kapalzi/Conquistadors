@@ -5,11 +5,6 @@ BuildersTeam::BuildersTeam()
 {
 }
 
-
-BuildersTeam::~BuildersTeam()
-{
-}
-
 int BuildersTeam::dailyHunger()
 {
 	int neededFood = 0;

@@ -7,7 +7,6 @@ public:
 	vector<Builder*>buildersPack;
 
 	BuildersTeam();
-	~BuildersTeam();
 	
 	int dailyHunger();
 	void isBuilderDead();

@@ -10,7 +10,6 @@ public:
 	vector<Collector*>collectorsPack;
 
 	collectorsTeam();
-	~collectorsTeam();
 
 	void collectorsGoOut();
 	int collectorsComeBackWithFood();
@@ -18,8 +17,9 @@ public:
 	void collectorsWereAttacked();
 
 	int dailyHunger();
+	int dailyEating(int needed, int stored);
 	void isCollectorDead();
 	void collectorsDie(int d);
-	int dailyEating(int needed, int stored);
+	
 };
 

@@ -7,13 +7,13 @@
 #include "collectorsTeam.h"
 #include "BuildersTeam.h"
 #include "SoldiersTeam.h"
+#include <conio.h>
 using namespace std;
 
 class Events
 {
 public:
 	Events();
-	~Events();
 	void addCollectors(int l);
 	void addBuilders(int l);
 	void addSoldiers(int l);

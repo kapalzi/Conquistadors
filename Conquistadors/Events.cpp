@@ -10,10 +10,6 @@ Events::Events()
 {
 }
 
-Events::~Events()
-{
-}
-
 void Events::addCollectors(int l)
 {
 	for (int i = 0; i < l; i++)
@@ -73,12 +69,9 @@ void Events::startSimulation()
 				newSettlement.setStoredFood(-collectors.dailyEating(collectors.dailyHunger(), newSettlement.getStoredFood()));
 				newSettlement.setStoredFood(-soldiers.dailyEating(soldiers.dailyHunger(), newSettlement.getStoredFood()));
 				newSettlement.setStoredFood(-builders.dailyEating(builders.dailyHunger(), newSettlement.getStoredFood()));
-
 				collectors.isCollectorDead();
 				soldiers.isSoldierDead();
 				builders.isBuilderDead();
-				//soldiers.indiansAttack(day);
-				//int a = soldiers.indiansAttack(day);
 				newSettlement.setCondition(-2 * soldiers.indiansAttack(day));
 				newSettlement.checkCondition(newSettlement.getCondition());
 
@@ -86,7 +79,7 @@ void Events::startSimulation()
 			}
 			day++;
 		}
-		cin >> day;
+		getch();
 }
 
 

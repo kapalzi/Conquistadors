@@ -10,12 +10,6 @@ collectorsTeam::collectorsTeam()
 
 }
 
-
-collectorsTeam::~collectorsTeam()
-{
-}
-
-
 void collectorsTeam::collectorsGoOut()
 {
 	if (collectorsPack.empty()) return;
@@ -102,15 +96,6 @@ int collectorsTeam::dailyEating(int needed,int stored)
 	}
 	else
 	{
-		/*
-		//WSZYSCY UMIERALI W TYM SAMYM MOMENCIE
-		int ration = stored / collectorsPack.size();
-		for each (Collector* i in collectorsPack)
-		{
-			i->setHunger(ration);
-		}
-		return ration * collectorsPack.size();
-	*/
 		for each (Collector* i in collectorsPack)
 		{
 			if(stored>=30)

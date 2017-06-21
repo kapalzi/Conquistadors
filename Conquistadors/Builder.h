@@ -6,8 +6,7 @@ class Builder : public Human
 {
 	int tired;
 public:
-	Builder(int health = 100, int hunger = 100, int tired = 0);
-	~Builder();
+	Builder(int hunger = 100, int tired = 0);
 
 	int getTired() { return tired; }
 
